@@ -17,8 +17,8 @@ def qrapi():
             "StatusCode": 400,
             "Message": "Invalid parameters",
             "Parameters": {
-                "Text": "/qr?&text=https://www.youtube.com/watch?v=dQw4w9WgXcQ",
-                "Qrcode": "/qr?&qrcode=image_url"
+                "Text": request.base_url + "?&text=https://www.youtube.com/watch?v=dQw4w9WgXcQ",
+                "Qrcode": request.base_url + "?&qrcode=image_url"
             }
         }
     if args.get("text"):
