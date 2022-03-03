@@ -1,0 +1,5 @@
+qrcode
+Flask
+opencv-python
+requests
+numpy
