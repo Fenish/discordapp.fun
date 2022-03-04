@@ -8,8 +8,8 @@ base_url = "https://api.discordapp.fun/"
 @server.route("/translate")
 def currency():
     params = request.args
-    from_lang = params.get("from").lower()
-    to_lang = params.get("to").lower()
+    from_lang = params.get("from")
+    to_lang = params.get("to")
     text = params.get("text")
     if not from_lang and not to_lang and not text:
         return  {
@@ -17,6 +17,8 @@ def currency():
             "Message": "Invalid parameters",
             "Example": base_url + "translate?&fromEN?&to=ES?&text=Hello+how+are+you"
         }
+    from_lang = from_lang.lower()
+    to_lang = to_lang.lower()
     if not LANGUAGES.get(from_lang) or not LANGUAGES.get(to_lang):
         return {
             "StatusCode": 400,
