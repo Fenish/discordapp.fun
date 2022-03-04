@@ -15,7 +15,7 @@ def currency():
         return  {
             "StatusCode": 400,
             "Message": "Invalid parameters",
-            "Example": base_url + "translate?&fromEN?&to=ES?&text=Hello+how+are+you"
+            "Example": base_url + "translate?&fromEN&to=ES&text=Hello+how+are+you"
         }
     from_lang = from_lang.lower()
     to_lang = to_lang.lower()
