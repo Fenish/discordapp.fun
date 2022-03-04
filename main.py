@@ -22,6 +22,8 @@ def welcome():
     map = app.url_map.iter_rules()
     endpoints = []
     for endpoint in list(map)[:-2]:
+        if "/translate/languages" == endpoint.rule:
+            continue
         endpoints.append(f"{base_url}{endpoint.rule}")
     return {
         "StatusCode": 200,

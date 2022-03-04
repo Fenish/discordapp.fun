@@ -4,3 +4,4 @@ opencv-python
 requests
 numpy
 pillow
+googletrans==3.1.0a0
