@@ -1,11 +1,11 @@
-import os
 import importlib
-from flask import Flask, request
+import os
+
+from flask import Flask
 
 app = Flask(__name__)
 app.config['JSON_SORT_KEYS'] = False
 app.config['JSONIFY_PRETTYPRINT_REGULAR'] = True
-
 
 folders = [folder.name for folder in os.scandir() if folder.is_dir() and folder.name[0].isalpha()]
 for folder in folders:
@@ -19,18 +19,18 @@ base_url = "https://api.discordapp.fun"
 
 @app.route("/")
 def welcome():
-    map = app.url_map.iter_rules()
+    site_map = app.url_map.iter_rules()
     endpoints = []
-    for endpoint in list(map)[:-2]:
+    for endpoint in list(site_map)[:-2]:
         if "/translate/languages" == endpoint.rule:
             continue
         endpoints.append(f"{base_url}{endpoint.rule}")
     return {
         "StatusCode": 200,
-        "Message": "Welcome to home of useless shits.You cannot find anything if you are not developer.Haha good luck 🍀",
+        "Message": "Welcome to home of useless shits.You cannot find anything if you are not developer.Haha good luck ",
         "Endpoints": endpoints
     }
 
 
 if __name__ == "__main__":
-    app.run(debug=True,host="0.0.0.0")
+    app.run(debug=True, host="0.0.0.0")

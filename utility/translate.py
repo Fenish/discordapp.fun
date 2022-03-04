@@ -1,5 +1,5 @@
 from flask import Blueprint, request
-from googletrans import Translator, constants, LANGUAGES
+from googletrans import Translator, LANGUAGES
 
 server = Blueprint("translate_api", __name__)
 base_url = "https://api.discordapp.fun/"
@@ -12,7 +12,7 @@ def currency():
     to_lang = params.get("to")
     text = params.get("text")
     if not from_lang or not to_lang or not text:
-        return  {
+        return {
             "StatusCode": 400,
             "Message": "Invalid parameters",
             "Example": base_url + "translate?&from=EN&to=ES&text=Hello+how+are+you"
@@ -33,6 +33,7 @@ def currency():
         "Original": translation.origin,
         "Message": translation.text
     }
+
 
 @server.route("/translate/languages")
 def get_languages():
