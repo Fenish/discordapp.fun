@@ -3,22 +3,24 @@ import qrcode
 import requests
 import numpy as np
 
-from main import app
 from io import BytesIO
-from flask import request, send_file
+from flask import request, send_file, Blueprint
 from urllib.request import Request, urlopen
 
+server = Blueprint("qr_api", __name__)
+base_url = "https://api.discordapp.fun/"
 
-@app.route("/qr")
-def qrapi():
+
+@server.route("/qr")
+def qr_api():
     args = request.args
     if not args.get("text") and not args.get("qrcode"):
         return {
             "StatusCode": 400,
             "Message": "Invalid parameters",
             "Parameters": {
-                "Text": request.base_url + "?&text=https://www.youtube.com/watch?v=dQw4w9WgXcQ",
-                "Qrcode": request.base_url + "?&qrcode=image_url"
+                "Text": base_url + "qr?&text=https://www.youtube.com/watch?v=dQw4w9WgXcQ",
+                "Qrcode": base_url + "qr?&qrcode=image_url"
             }
         }
     if args.get("text"):

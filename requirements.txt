@@ -3,3 +3,4 @@ Flask
 opencv-python
 requests
 numpy
+pillow
