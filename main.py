@@ -4,6 +4,7 @@ from flask import Flask, request
 
 app = Flask(__name__)
 app.config['JSON_SORT_KEYS'] = False
+app.config['JSONIFY_PRETTYPRINT_REGULAR'] = True
 
 
 folders = [folder.name for folder in os.scandir() if folder.is_dir() and folder.name[0].isalpha()]
