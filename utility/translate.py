@@ -11,11 +11,11 @@ def currency():
     from_lang = params.get("from")
     to_lang = params.get("to")
     text = params.get("text")
-    if not from_lang and not to_lang and not text:
+    if not from_lang or not to_lang or not text:
         return  {
             "StatusCode": 400,
             "Message": "Invalid parameters",
-            "Example": base_url + "translate?&fromEN&to=ES&text=Hello+how+are+you"
+            "Example": base_url + "translate?&from=EN&to=ES&text=Hello+how+are+you"
         }
     from_lang = from_lang.lower()
     to_lang = to_lang.lower()
