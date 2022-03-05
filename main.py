@@ -1,9 +1,10 @@
-import importlib
 import os
+import importlib
 
 from flask import Flask
 
 app = Flask(__name__)
+app.config['JSON_AS_ASCII'] = False
 app.config['JSON_SORT_KEYS'] = False
 app.config['JSONIFY_PRETTYPRINT_REGULAR'] = True
 
@@ -27,7 +28,7 @@ def welcome():
         endpoints.append(f"{base_url}{endpoint.rule}")
     return {
         "StatusCode": 200,
-        "Message": "Welcome to home of useless shits.You cannot find anything if you are not developer.Haha good luck ",
+        "Message": "Welcome to home of useless shits. You cannot find anything if you are not developer. Haha good luck ",
         "Endpoints": endpoints
     }
 

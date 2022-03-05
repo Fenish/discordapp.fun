@@ -5,3 +5,5 @@ requests~=2.27.1
 numpy==1.22.2
 pillow
 googletrans==3.1.0a0
+webdriver_manager
+selenium
