@@ -85,6 +85,7 @@ def screenshot():
     browser.execute_script("window.close();")
     browser.switch_to.window(browser.window_handles[0])
 
+    img_cache.setdefault(url, {})
     img_cache[url]["image"] = img
     img_cache[url]["width"] = width
     img_cache[url]["height"] = height
