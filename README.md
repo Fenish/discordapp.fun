@@ -6,6 +6,6 @@ Website: ~~https://api.discordapp.fun~~
 - ### QR Code
   - QR code generator
   - QR code reader
-  - 
+ 
 - ### Translate
   - Translates specific text to almost every language
