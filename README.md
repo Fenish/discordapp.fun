@@ -1,5 +1,5 @@
 # Discordapp.fun
-Rest api with flask for discord bot developers with full of useless shits\
+Rest api with flask with full of useless shits\
 Website: ~~https://api.discordapp.fun~~
 
 ## Features
